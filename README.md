@@ -4,7 +4,10 @@
 
 Vue3/Vue2 Single File Component loader.  
 Load .vue files dynamically at runtime from your html/js. No node.js environment, no (webpack) build step needed.  
+**Additional compilerOptions in options**
 
+## Modifications
+ * Add compilerOptions to modify it in createSFCModule - can used for set option `whitespace: 'preserve'` 
 
 ## Key Features
 

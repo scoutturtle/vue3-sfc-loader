@@ -105,11 +105,11 @@ export async function createSFCModule(source : string, filename : AbstractPath, 
 		scoped: hasScoped,
 		id: scopeId,
 		slotted: descriptor.slotted,
-		compilerOptions: {
+		compilerOptions: Object.assign({
 			delimiters,
 			scopeId: hasScoped ? scopeId : undefined,
 			mode: 'module', // see: https://github.com/vuejs/vue-next/blob/15baaf14f025f6b1d46174c9713a2ec517741d0d/packages/compiler-core/src/options.ts#L160
-		},
+		}, options.compilerOptions ),
 		//	transformAssetUrls
 		preprocessLang: descriptor.template.lang,
 		preprocessCustomRequire: id => moduleCache[id], // makes consolidate optional, see https://github.com/vuejs/vue-next/blob/15baaf14f025f6b1d46174c9713a2ec517741d0d/packages/compiler-sfc/src/compileTemplate.ts#L111-L113

@@ -2,6 +2,9 @@ import {
 	ParserPlugin as babel_ParserPlugin,
 } from '@babel/parser';
 
+import {
+  CompilerOptions,
+} from '@vue/compiler-core'
 
 /**
  * @internal
@@ -392,7 +395,11 @@ export type Options = {
  * ```
  */
  	customBlockHandler?(block : CustomBlock, filename : AbstractPath, options : Options) : Promise<CustomBlockCallback | undefined>,
-
+ 
+/**
+ *  Used to modify CompilerOptions in createSFCModule()
+ */
+  compilerOptions?: CompilerOptions,
 }
 
 

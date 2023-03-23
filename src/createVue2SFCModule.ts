@@ -99,12 +99,12 @@ export async function createSFCModule(source : string, filename : AbstractPath, 
 		source: descriptor.template.src ? (await (await getResource({ refPath: filename, relPath: descriptor.template.src }, options).getContent()).getContentData(false)) as string : descriptor.template.content,
 		filename: strFilename,
 		compiler: vueTemplateCompiler as VueTemplateCompiler,
-		compilerOptions: {
+		compilerOptions: Object.assign({
 			delimiters,
 			outputSourceRange: true,
 			scopeId: hasScoped ? scopeId : null,
 			comments: true
-		} as any,
+		}, options.compilerOptions ) as any,
 		isProduction: isProd,
 		prettify: false
 	} : null;

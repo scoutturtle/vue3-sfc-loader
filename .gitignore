@@ -80,7 +80,13 @@ typings/
 
 # Nuxt.js build / generate output
 .nuxt
-dist
+
+# let only build in dist
+dist/types
+dist/*.br
+dist/*.gz
+dist/*.map
+dist/*.html
 
 # Gatsby files
 .cache/
